@@ -1,0 +1,65 @@
+/** choropleth visualization */
+
+#parcels{
+  polygon-fill: #ffffc0;
+  polygon-opacity: 1;
+  line-color: #000000;
+  line-width: .5;
+  line-opacity: 1;
+}
+
+#parcels [ built >= 1931] {
+   //polygon-fill: #FFEDA0;
+   polygon-fill: #ffffc0;
+}
+#parcels [ built <= 1930] {
+   polygon-fill: #ffa500;
+}
+#parcels [ built <= 1900] {
+   polygon-fill: #ff0000;
+}
+#parcels [ built = 0] {
+   //polygon-fill: #FFEDA0;
+   polygon-fill: #ffffc0;
+}
+#parcels [ land = "road"] {
+   polygon-fill: #ffffff;
+   polygon-opacity: 1;
+}
+#parcels [ land = "Marginal Way"] {
+   polygon-fill: #fff5ee;
+   polygon-opacity: 1;
+}
+#parcels [ land = "Country Club"] {
+   polygon-fill: #228b22;
+   polygon-opacity: 1;
+}
+#parcels [ land = "Massacre Pond"] {
+   polygon-fill: #3E7BB6;
+   polygon-opacity: 1;
+}
+#parcels::labels {
+  text-name: [address];
+  text-face-name: 'DejaVu Sans Book';
+  text-size: 10;
+  text-label-position-tolerance: 10;
+  text-fill: #000;
+  text-halo-fill: #FFFFFF;
+  text-halo-radius: 1;
+  text-dy: -10;
+  text-allow-overlap: false;
+  text-placement: interior;
+  text-placement-type: simple;
+  [zoom<17]{
+    text-name:[nada];
+      }
+  [zoom=17]{
+    text-size:10
+    }
+  [zoom=18]{
+    text-size:12
+    }
+  [zoom>18]{
+    text-size:14
+    }
+}
