@@ -1,3 +1,3 @@
 ProutsNeck
 ==========
-Site for development related to the Prouts Neck History Project.
+Site for development and code related to the Prouts Neck History Project.
